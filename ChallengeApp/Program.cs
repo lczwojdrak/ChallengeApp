@@ -70,3 +70,4 @@ Console.WriteLine("Liczba 7>>" + sign7);
 Console.WriteLine("Liczba 8>>" + sign8);
 Console.WriteLine("Liczba 9>>" + sign9);
 
+Console.WriteLine("Zadanie domowe Dzień 5 SKOŃCZONE");
