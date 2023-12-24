@@ -1,73 +1,51 @@
-﻿int number = 4594;
-string numberAsString = number.ToString();
-char[] signs = numberAsString.ToCharArray();
+﻿//Zadanie Domowe 6
 
-Console.WriteLine("Wyniki dla liczby_" + number);
-int sign0 = 0;
-int sign1 = 0;
-int sign2 = 0;
-int sign3 = 0;
-int sign4 = 0;
-int sign5 = 0;
-int sign6 = 0;
-int sign7 = 0;
-int sign8 = 0;
-int sign9 = 0;
+using ChallengeApp;
+
+Employee user1 = new Employee("Kamila", "Popłocka", 31);
+Employee user2 = new Employee("Łukasz", "Czwojdrak", 32);
+Employee user3 = new Employee("Marta", "Żuk", 33);
 
 
-foreach (char sign in signs)
-    {
-        if (sign == '0')
-        {
-            sign0++;
-        }
-        else if (sign == '1')
-        {
-            sign1++;
-        }
-        else if (sign == '2')
-        {
-            sign2++;
-        }
-        else if (sign == '3')
-        {
-            sign3++;
-        }
-        else if (sign == '4')
-        {
-            sign4++;
-        }
-        else if (sign == '5')
-        {
-            sign5++;
-        }
-        else if (sign == '6')
-        {
-            sign6++;
-        }
-        else if (sign == '7')
-        {
-            sign7++;
-        }
-        else if (sign == '8')
-        {
-            sign8++;
-        }
-        else if (sign == '9')
-        {
-            sign9++;
-        }
-     
-    }
-Console.WriteLine("Liczba 0>>" + sign0);
-Console.WriteLine("Liczba 1>>" + sign1);
-Console.WriteLine("Liczba 2>>" + sign2);
-Console.WriteLine("Liczba 3>>" + sign3);
-Console.WriteLine("Liczba 4>>" + sign4);
-Console.WriteLine("Liczba 5>>" + sign5);
-Console.WriteLine("Liczba 6>>" + sign6);
-Console.WriteLine("Liczba 7>>" + sign7);
-Console.WriteLine("Liczba 8>>" + sign8);
-Console.WriteLine("Liczba 9>>" + sign9);
+//User1
+user1.AddScore(5);
+user1.AddScore(2);
+user1.AddScore(6);
+user1.AddScore(9);
+user1.AddScore(14);
 
-Console.WriteLine("Zadanie domowe Dzień 5 SKOŃCZONE");
+//User2
+user2.AddScore(3);
+user2.AddScore(7);
+user2.AddScore(8);
+user2.AddScore(3);
+user2.AddScore(8);
+
+//User3
+user3.AddScore(9);
+user3.AddScore(7);
+user3.AddScore(5);
+user3.AddScore(3);
+user3.AddScore(10);
+
+var result1 = user1.Result;
+var result2 = user2.Result;
+var result3 = user3.Result;
+
+int maxscore = Math.Max(result1, (Math.Max(result2, result3)));
+
+if (result1 >= maxscore)
+{
+    Console.WriteLine("Użytkownikiem z największą ilością punktów jest " + user1.Login + " " + user1.Surname + " lat " + user1.Age);
+}
+
+else if (result2 >= maxscore)
+{
+    Console.WriteLine("Użytkownikiem z największą ilością punktów jest " + user2.Login + " " + user2.Surname + " lat " + user2.Age);
+}
+
+else if (result3 >= maxscore)
+{
+    Console.WriteLine("Użytkownikiem z największą ilością punktów jest " + user3.Login + " " + user3.Surname + " lat " + user3.Age);
+}
+
