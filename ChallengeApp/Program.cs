@@ -6,27 +6,25 @@ Employee user1 = new Employee("Kamila", "Popłocka", 31);
 Employee user2 = new Employee("Łukasz", "Czwojdrak", 32);
 Employee user3 = new Employee("Marta", "Żuk", 33);
 
-
-//User1
 user1.AddScore(5);
 user1.AddScore(2);
 user1.AddScore(6);
 user1.AddScore(9);
 user1.AddScore(14);
+user1.AddScore(-15);
 
-//User2
 user2.AddScore(3);
 user2.AddScore(7);
 user2.AddScore(8);
 user2.AddScore(3);
 user2.AddScore(8);
 
-//User3
 user3.AddScore(9);
 user3.AddScore(7);
 user3.AddScore(5);
 user3.AddScore(3);
 user3.AddScore(10);
+user3.AddScore(-10);
 
 var result1 = user1.Result;
 var result2 = user2.Result;
