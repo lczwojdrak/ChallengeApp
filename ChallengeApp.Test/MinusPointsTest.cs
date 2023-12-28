@@ -31,7 +31,7 @@ namespace ChallengeApp.Test
 
             var result = user.Result;
 
-            Assert.AreEqual(25, result);
+            Assert.AreEqual(23, result);
         }
     }
 

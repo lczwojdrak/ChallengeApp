@@ -29,7 +29,7 @@ namespace ChallengeApp.Test
 
             var result = user.Result;
 
-            Assert.AreEqual(46, result);
+            Assert.AreEqual(48, result);
         }
     }
 

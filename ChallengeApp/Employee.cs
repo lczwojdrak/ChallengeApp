@@ -4,6 +4,11 @@
     {
         private List<int> score = new List<int>();
 
+        public Employee(string login)
+        {
+            Login = login;
+        }
+
         public Employee(string login, string surname, int age)
         {
             this.Login = login;
