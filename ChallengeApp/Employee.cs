@@ -43,6 +43,7 @@ namespace ChallengeApp
         }
         public void AddGrade(decimal grade, int v)
         {
+
             float results = (float)grade;
             this.AddGrade(results);
         }
