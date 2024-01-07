@@ -1,4 +1,6 @@
-﻿namespace ChallengeApp
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ChallengeApp
 {
     public class Employee
     {
@@ -14,7 +16,45 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Grade Value");
+            }
+        }
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("Float is not a value");
+            }
+        }
+        public void AddGrade(double grade)
+        {
+            float results = (float)grade;
+            this.AddGrade(results); 
+        }
+        public void AddGrade(decimal grade, int v)
+        {
+            float results = (float)grade;
+            this.AddGrade(results);
+        }
+        public void AddGrade(sbyte grade)
+        {
+            float results = (float)grade;
+            this.AddGrade(results);
+        }
+        public void AddGrade(long grade)
+        {
+            float results = (float)grade;
+            this.AddGrade(results);
         }
         public statistics GetStatistics()
         {
