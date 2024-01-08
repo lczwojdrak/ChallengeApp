@@ -25,6 +25,7 @@ namespace ChallengeApp
                 Console.WriteLine("Invalid Grade Value");
             }
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -36,27 +37,32 @@ namespace ChallengeApp
                 Console.WriteLine("Float is not a value");
             }
         }
+
         public void AddGrade(double grade)
         {
             float results = (float)grade;
             this.AddGrade(results); 
         }
+
         public void AddGrade(decimal grade, int v)
         {
 
             float results = (float)grade;
             this.AddGrade(results);
         }
+
         public void AddGrade(sbyte grade)
         {
             float results = (float)grade;
             this.AddGrade(results);
         }
+
         public void AddGrade(long grade)
         {
             float results = (float)grade;
             this.AddGrade(results);
         }
+
         public statistics GetStatistics()
         {
             var statistics = new statistics();
