@@ -10,16 +10,16 @@ namespace ChallengeApp.Test
             employee.AddGrade(5);
             employee.AddGrade(10);
             employee.AddGrade(6);
+            employee.AddGrade('A');
+            employee.AddGrade(101);
 
             var statistics = employee.GetStatistics();
 
             Assert.AreEqual(statistics.Min, 5);
-            Assert.AreEqual(statistics.Max, 10);
-            Assert.AreEqual(statistics.Average, 7);
-
-            Assert.AreNotEqual(statistics.Min, 1);
-            Assert.AreNotEqual(statistics.Max, 12);
-            Assert.AreNotEqual(statistics.Average, 5);
+            Assert.AreEqual(statistics.Max, 100);
+            Assert.AreEqual(statistics.Average, 30, 25);
+            Assert.AreEqual(statistics.AverageLetter, 'D');
+            Assert.AreNotEqual(statistics.AverageLetter, 'E');
 
         }
 
