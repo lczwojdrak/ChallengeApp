@@ -10,12 +10,13 @@ while (true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika:");
     var input = Console.ReadLine();
-
+          
     if (input == "q")
     {
         break;
     }
     employee.AddGrade(input);
+
 }
 
 var statistics = employee.GetStatistics();

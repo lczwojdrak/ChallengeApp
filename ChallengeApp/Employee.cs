@@ -29,6 +29,22 @@ namespace ChallengeApp
                 Console.WriteLine("Invalid Grade Value");
             }
         }
+       
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else if (char.TryParse(grade, out char resultChar))
+            {
+                this.AddGrade(resultChar);
+            }
+            else
+            {
+                Console.WriteLine("Float is not a value");
+            }
+        }
         public void AddGrade(char grade)
         {
             switch (grade)
@@ -54,22 +70,11 @@ namespace ChallengeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter, please use A - E");
+                    Console.WriteLine("Wrong letter, please use A - E");
                     break;
             }
-        }
-        public void AddGrade(string grade)
-        {
-            if (float.TryParse(grade, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                Console.WriteLine("Float is not a value");
-            }
-        }
 
+        }
         public void AddGrade(double grade)
         {
             float results = (float)grade;
