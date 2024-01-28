@@ -1,4 +1,8 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using System.Numerics;
+using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 
 namespace ChallengeApp
@@ -26,10 +30,10 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid Grade Value");
+                throw new Exception("Invalid Grade Value");
             }
         }
-       
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -42,7 +46,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Float is not a value");
+                throw new Exception("Float is not a value");
             }
         }
         public void AddGrade(char grade)
@@ -70,8 +74,7 @@ namespace ChallengeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter, please use A - E");
-                    break;
+                    throw new Exception("Wrong letter, please use A - E");
             }
 
         }

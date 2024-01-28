@@ -6,17 +6,24 @@ Console.WriteLine("==========================================\n\n");
 
 var employee = new Employee();
 
+
 while (true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika:");
     var input = Console.ReadLine();
-          
+
     if (input == "q")
     {
         break;
     }
-    employee.AddGrade(input);
-
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
 }
 
 var statistics = employee.GetStatistics();
