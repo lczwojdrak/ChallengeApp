@@ -1,26 +1,13 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.Metrics;
-using System.Numerics;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Runtime.CompilerServices;
 
 namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
-        public Employee()
-        {
-        }
-        public Employee(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
 
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+        public Employee(string name, string surname, string sex, int age)
+  : base(name, surname, sex, age) { }
 
         public void AddGrade(float grade)
         {

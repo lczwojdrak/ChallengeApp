@@ -4,7 +4,7 @@ Console.WriteLine("Witam w programie XYZ do oceny Pracowników");
 Console.WriteLine("W celu zakończenia wpisywania ocen wciśnij 'q'");
 Console.WriteLine("==========================================\n\n");
 
-var employee = new Employee();
+var employee = new Employee("Łukasz", "Czwojdrak", "Mężczyzna", 36);
 
 
 while (true)
