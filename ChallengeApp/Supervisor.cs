@@ -19,10 +19,6 @@
             {
                 this.grades.Add(grade);
             }
-            else
-            {
-                throw new Exception("Invalid Grade Value");
-            }
         }
 
         public void AddGrade(string grade)
@@ -88,7 +84,7 @@
                     this.grades.Add(5);
                     break;
                 default:
-                    throw new Exception("Wrong letter, please use A - E");
+                    throw new Exception("Wrong digit, please use 1 - 6");
             }
             if (float.TryParse(grade, out float result))
             {
