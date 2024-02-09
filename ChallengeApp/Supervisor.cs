@@ -26,102 +26,71 @@
             switch (grade)
             {
                 case "6":
-                    this.grades.Add(100);
+                    AddGrade(100);
                     break;
                 case "-6":
                 case "6-":
-                    this.grades.Add(95);
+                    AddGrade(95);
                     break;
                 case "5":
-                    this.grades.Add(80);
+                    AddGrade(80);
                     break;
                 case "+5":
                 case "5+":
-                    this.grades.Add(85);
+                    AddGrade(85);
                     break;
                 case "-5":
                 case "5-":
-                    this.grades.Add(75);
+                    AddGrade(75);
                     break;
                 case "4":
-                    this.grades.Add(60);
+                    AddGrade(60);
                     break;
                 case "-4":
                 case "4-":
-                    this.grades.Add(55);
+                    AddGrade(55);
                     break;
                 case "+4":
                 case "4+":
-                    this.grades.Add(65);
+                    AddGrade(65);
                     break;
                 case "3":
-                    this.grades.Add(40);
+                    AddGrade(40);
                     break;
                 case "-3":
                 case "3-":
-                    this.grades.Add(35);
+                    AddGrade(35);
                     break;
                 case "+3":
                 case "3+":
-                    this.grades.Add(45);
+                    AddGrade(45);
                     break;
                 case "2":
-                    this.grades.Add(20);
+                    AddGrade(20);
                     break;
                 case "-2":
                 case "2-":
-                    this.grades.Add(15);
+                    AddGrade(15);
                     break;
                 case "+2":
                 case "2+":
-                    this.grades.Add(25);
+                    AddGrade(25);
                     break;
                 case "1":
-                    this.grades.Add(0);
+                    AddGrade(0);
                     break;
                 case "+1":
                 case "1+":
-                    this.grades.Add(5);
+                    AddGrade(5);
                     break;
                 default:
                     throw new Exception("Wrong digit, please use 1 - 6");
             }
-            if (float.TryParse(grade, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else if (char.TryParse(grade, out char resultChar))
-            {
-                this.AddGrade(resultChar);
-            }
+            return;
+
         }
         public void AddGrade(char grade)
         {
-            switch (grade)
-            {
-                case 'A':
-                case 'a':
-                    this.grades.Add(100);
-                    break;
-                case 'B':
-                case 'b':
-                    this.grades.Add(80);
-                    break;
-                case 'C':
-                case 'c':
-                    this.grades.Add(60);
-                    break;
-                case 'D':
-                case 'd':
-                    this.grades.Add(40);
-                    break;
-                case 'E':
-                case 'e':
-                    this.grades.Add(20);
-                    break;
-                default:
-                    throw new Exception("Wrong letter, please use A - E");
-            }
 
         }
         public void AddGrade(double grade)
@@ -132,7 +101,6 @@
 
         public void AddGrade(decimal grade, int v)
         {
-
             float results = (float)grade;
             this.AddGrade(results);
         }
@@ -151,39 +119,39 @@
 
         public statistics GetStatistics()
         {
-            var statistics = new statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
+            var statistics2 = new statistics();
+            statistics2.Average = 0;
+            statistics2.Max = float.MinValue;
+            statistics2.Min = float.MaxValue;
 
             foreach (var grade in this.grades)
             {
-                statistics.Max = Math.Max(statistics.Max, grade);
-                statistics.Min = Math.Min(statistics.Min, grade);
-                statistics.Average += grade;
+                statistics2.Max = Math.Max(statistics2.Max, grade);
+                statistics2.Min = Math.Min(statistics2.Min, grade);
+                statistics2.Average += grade;
             }
 
-            statistics.Average /= this.grades.Count;
+            statistics2.Average /= this.grades.Count;
 
-            switch (statistics.Average)
+            switch (statistics2.Average)
             {
                 case var average when average >= 80:
-                    statistics.AverageLetter = 'A';
+                    statistics2.AverageLetter = 'A';
                     break;
                 case var average when average >= 60:
-                    statistics.AverageLetter = 'B';
+                    statistics2.AverageLetter = 'B';
                     break;
                 case var average when average >= 40:
-                    statistics.AverageLetter = 'C';
+                    statistics2.AverageLetter = 'C';
                     break;
                 case var average when average >= 20:
-                    statistics.AverageLetter = 'D';
+                    statistics2.AverageLetter = 'D';
                     break;
                 default:
-                    statistics.AverageLetter = 'E';
+                    statistics2.AverageLetter = 'E';
                     break;
             }
-            return statistics;
+            return statistics2;
         }
     }
 }
